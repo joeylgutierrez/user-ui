@@ -33,6 +33,12 @@
     "demo-e2e": {
       "tags": [],
       "implicitDependencies": ["demo"]
+    },
+    "users-data-access": {
+      "tags": []
+    },
+    "users-page": {
+      "tags": []
     }
   }
 }

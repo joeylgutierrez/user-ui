@@ -18,7 +18,10 @@
             "tsConfig": "apps/demo/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": ["apps/demo/src/favicon.ico", "apps/demo/src/assets"],
-            "styles": ["apps/demo/src/styles.scss"],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
+              "apps/demo/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -63,6 +66,10 @@
             "development": {
               "browserTarget": "demo:build:development"
             }
+          },
+          "options": {
+            "browserTarget": "angular-application-name:build",
+            "proxyConfig": "apps/demo/src/proxy.conf.json"
           },
           "defaultConfiguration": "development"
         },
@@ -116,9 +123,60 @@
           }
         }
       }
+    },
+    "users-data-access": {
+      "projectType": "library",
+      "root": "libs/users/data-access",
+      "sourceRoot": "libs/users/data-access/src",
+      "prefix": "user-ui",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/users/data-access"],
+          "options": {
+            "jestConfig": "libs/users/data-access/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/users/data-access/src/**/*.ts",
+              "libs/users/data-access/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "users-page": {
+      "projectType": "library",
+      "root": "libs/users/page",
+      "sourceRoot": "libs/users/page/src",
+      "prefix": "user-ui",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/users/page"],
+          "options": {
+            "jestConfig": "libs/users/page/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/users/page/src/**/*.ts",
+              "libs/users/page/src/**/*.html"
+            ]
+          }
+        }
+      }
     }
   },
   "cli": {
+    "analytics": false,
     "defaultCollection": "@nrwl/angular",
     "packageManager": "npm"
   },

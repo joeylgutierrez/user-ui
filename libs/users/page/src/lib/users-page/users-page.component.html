@@ -1,0 +1,24 @@
+<h2>Users</h2>
+
+<div *ngFor="let user of users$ | async" class='card-container'>
+  <mat-card  class='user-card'>
+    <mat-card-header>
+      <div mat-card-avatar>
+        <mat-icon class="user-image" aria-hidden="false" aria-label="user">account_circle</mat-icon>
+      </div>
+      <mat-card-title> {{user.emailAddress}}</mat-card-title>
+      <mat-card-subtitle><strong>Id:</strong> {{ user.id }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <div>
+        <strong>Type:</strong> {{ user.userType }}
+      </div>
+      <div>
+        <strong>Language:</strong> {{ user.languageCode }}
+      </div>
+      <div>
+        <strong>Projects:</strong> {{ user.projectIds }}
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

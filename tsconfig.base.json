@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@user-ui/users/data-access": ["libs/users/data-access/src/index.ts"],
+      "@user-ui/users/page": ["libs/users/page/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
