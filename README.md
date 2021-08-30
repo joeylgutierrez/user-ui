@@ -20,6 +20,8 @@ npx nx serve
 npx ng serve
 ```
 
+The application will run at http://localhost:4200
+
 ## Running unit tests
 To run unit tests use:
 ```shell
