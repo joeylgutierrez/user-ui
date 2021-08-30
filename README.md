@@ -4,8 +4,7 @@ named user-ui was created as part of nx which leverages the angular cli and vari
 application uses Angular 12 and Typescript. 
 
 ## Quick Start & Documentation
-To get started you will need to install all the dependencies. First change directories
-to 'demo' and run
+To get started you will need to install all the dependencies
 ```shell
 npm install
 ```
